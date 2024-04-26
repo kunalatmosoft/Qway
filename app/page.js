@@ -65,7 +65,7 @@ const LoginPage = () => {
                   href="./mail"
                   className="ml-auto inline-block text-sm underline"
                 >
-                  Let's Started!
+                  Let&apos;s Started!
                 </Link>
         </Button >
         

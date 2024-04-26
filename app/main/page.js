@@ -362,6 +362,8 @@ export default function Dashboard() {
               <Badge variant="outline" className="absolute right-3 top-3">
                 Window
               </Badge>
+
+              
               <div className="flex-1" />
               <form
                 className="relative overflow-hidden rounded-lg border bg-background focus-within:ring-1 focus-within:ring-ring" x-chunk="dashboard-03-chunk-1"
