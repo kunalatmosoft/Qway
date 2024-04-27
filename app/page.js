@@ -68,7 +68,14 @@ const LoginPage = () => {
                   Let&apos;s Started!
                 </Link>
         </Button >
-        
+           <Button  className="w-half" type="button" >
+        <Link
+                  href="./main"
+                  className="ml-auto inline-block text-sm underline"
+                >
+                  Let&apos;s Started!
+                </Link>
+        </Button >
       </div>
     </main>
     );
