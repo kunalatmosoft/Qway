@@ -2,6 +2,8 @@
 
 import { useEffect, useState } from 'react';
 import { Client, Databases, ID } from 'appwrite';
+import { account, ID } from "./appwrite";
+import { Button } from "@/components/ui/button"
 
 const BooksPage = () => {
   const [books, setBooks] = useState([]);
@@ -123,6 +125,10 @@ NEXT_PUBLIC_APPWRITE_COLLECTIONS_ID=662b70382180ff1c3ff5 */
       setAlertMessage('Error deleting title. Please try again.');
     }
   };
+    const logout = async () => {
+    await account.deleteSession("current");
+    setLoggedInUser(null);
+  };
   const stats = [
     { id: 1, name: 'Transactions every 24 hours', value: '44 million' },
     { id: 2, name: 'Assets under holding', value: '$119 trillion' },
@@ -181,6 +187,9 @@ NEXT_PUBLIC_APPWRITE_COLLECTIONS_ID=662b70382180ff1c3ff5 */
             className="w-1/3 bg-gray-100 rounded-lg p-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
           />
 */}
+       <Button className="mt-6 px-8 py-4 rounded-full font-normal tracking-wide bg-gradient-to-b from-blue-600 to-blue-700 text-white outline-none focus:outline-none hover:shadow-lg hover:from-blue-700 transition duration-200 ease-in-out" type="button" onClick={logout}>
+          Logout
+        </Button >   
 
           <button
             onClick={handleAddTitle}
