@@ -1,10 +1,24 @@
 "use client"
-
+ 
+import {
+  Select,
+  SelectContent,
+  SelectGroup,
+  SelectItem,
+  SelectLabel,
+  SelectTrigger,
+  SelectValue,
+} from "@/components/ui/select"
+import * as React from "react"
+import {
+  Avatar,
+  AvatarFallback,
+  AvatarImage,
+} from "@/components/ui/avatar"
 import { useEffect, useState } from 'react';
 import { Client, Databases, ID } from 'appwrite';
-import { account, ID } from "./appwrite";
-
-
+import { Label } from "@/components/ui/label"
+import { Textarea } from "@/components/ui/textarea"
 const BooksPage = () => {
   const [books, setBooks] = useState([]);
   const [newTitle, setNewTitle] = useState('');
@@ -125,10 +139,6 @@ NEXT_PUBLIC_APPWRITE_COLLECTIONS_ID=662b70382180ff1c3ff5 */
       setAlertMessage('Error deleting title. Please try again.');
     }
   };
-    const logout = async () => {
-    await account.deleteSession("current");
-    setLoggedInUser(null);
-  };
   const stats = [
     { id: 1, name: 'Transactions every 24 hours', value: '44 million' },
     { id: 2, name: 'Assets under holding', value: '$119 trillion' },
@@ -140,14 +150,14 @@ NEXT_PUBLIC_APPWRITE_COLLECTIONS_ID=662b70382180ff1c3ff5 */
 
 
 <h2 className="text-5xl font-bold text-center mb-8 text-transparent bg-gradient-to-r from-purple-500 to-indigo-500 bg-clip-text">AT-Tweet</h2>
+<div className="bg-white shadow-md rounded-lg p-4 mb-4">
+<div className="flex items-center space-x-4">
 
-      <div className="bg-white shadow-md rounded-lg p-4 mb-4">
-        <div className="flex items-center space-x-4">
-          <img
-            src="/Atmosoft.png"
-            alt="User Avatar"
-            className="w-10 h-10 rounded-full"
-          />
+<Avatar>
+      <AvatarImage src="https://github.com/shadcn.png" alt="@shadcn" />
+      <AvatarFallback>CN</AvatarFallback>
+    </Avatar>
+         
           <input
             type="text"
             placeholder="Author name"
@@ -158,14 +168,29 @@ NEXT_PUBLIC_APPWRITE_COLLECTIONS_ID=662b70382180ff1c3ff5 */
 
         </div>
         <div className="flex items-center justify-between mt-4">
-          <input
-            type="text"
-            placeholder="What's on your mind?"
-            value={newcontent}
-            onChange={(e) => setNewComment(e.target.value)}
-            className="w-1/3 bg-gray-100 rounded-lg p-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
-          />
-<select
+        <div className="grid w-full gap-1.5">
+      <Label htmlFor="message">Your message</Label>
+      <Textarea placeholder="Type your message here."value={newcontent}
+            onChange={(e) => setNewComment(e.target.value)} id="message" />
+    </div>
+         
+         <Select>
+      <SelectTrigger className="w-[180px]"   value={newImageURL}
+  onChange={(e) => setNewImageURL(e.target.value)}>
+        <SelectValue placeholder="Select a fruit" />
+      </SelectTrigger>
+      <SelectContent>
+        <SelectGroup>
+          <SelectLabel>Fruits</SelectLabel>
+          <SelectItem value="https://th.bing.com/th/id/OIP.rzpOF9FbaxlXeR8S89ozGQHaHE?rs=1&pid=ImgDetMain">#1</SelectItem>
+          <SelectItem value="https://th.bing.com/th/id/OIP.awyiJGoo5CQSV6SLiW25cAHaFP?rs=1&pid=ImgDetMain">#2</SelectItem>
+          <SelectItem value="https://th.bing.com/th/id/OIP.SwrhabU8x1ahvQU7Q3xkswHaNK?rs=1&pid=ImgDetMain">#3</SelectItem>
+          <SelectItem value="grapes">Grapes</SelectItem>
+          <SelectItem value="pineapple">Pineapple</SelectItem>
+        </SelectGroup>
+      </SelectContent>
+    </Select>
+{/* <select
   value={newImageURL}
   onChange={(e) => setNewImageURL(e.target.value)}
   className="w-1/3 bg-gray-100 rounded-lg p-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
@@ -174,7 +199,7 @@ NEXT_PUBLIC_APPWRITE_COLLECTIONS_ID=662b70382180ff1c3ff5 */
   <option value="https://th.bing.com/th/id/OIP.rzpOF9FbaxlXeR8S89ozGQHaHE?rs=1&pid=ImgDetMain">#1</option>
   <option value="https://th.bing.com/th/id/OIP.awyiJGoo5CQSV6SLiW25cAHaFP?rs=1&pid=ImgDetMain">#2</option>
   <option value="https://th.bing.com/th/id/OIP.SwrhabU8x1ahvQU7Q3xkswHaNK?rs=1&pid=ImgDetMain">#3</option>
-  </select>
+  </select> */}
   {/* Add more options as needed 
 
 
@@ -187,9 +212,6 @@ NEXT_PUBLIC_APPWRITE_COLLECTIONS_ID=662b70382180ff1c3ff5 */
             className="w-1/3 bg-gray-100 rounded-lg p-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
           />
 */}
-       <button className="mt-6 px-8 py-4 rounded-full font-normal tracking-wide bg-gradient-to-b from-blue-600 to-blue-700 text-white outline-none focus:outline-none hover:shadow-lg hover:from-blue-700 transition duration-200 ease-in-out" type="button" onClick={logout}>
-          Logout
-        </button >   
 
           <button
             onClick={handleAddTitle}
