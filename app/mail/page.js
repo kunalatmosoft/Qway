@@ -1,5 +1,4 @@
 "use client"
- 
 import {
   Select,
   SelectContent,
@@ -19,6 +18,9 @@ import { useEffect, useState } from 'react';
 import { Client, Databases, ID } from 'appwrite';
 import { Label } from "@/components/ui/label"
 import { Textarea } from "@/components/ui/textarea"
+import Navbar from "@/components/ui/Navbar"
+
+
 const BooksPage = () => {
   const [books, setBooks] = useState([]);
   const [newTitle, setNewTitle] = useState('');
@@ -145,6 +147,7 @@ NEXT_PUBLIC_APPWRITE_COLLECTIONS_ID=662b70382180ff1c3ff5 */
     { id: 3, name: 'New users annually', value: '46,000' }
   ]
   return (
+   
 
     <div className=" bg-black py-24 sm:py-12">
 
@@ -152,12 +155,11 @@ NEXT_PUBLIC_APPWRITE_COLLECTIONS_ID=662b70382180ff1c3ff5 */
 <h2 className="text-5xl font-bold text-center mb-8 text-transparent bg-gradient-to-r from-purple-500 to-indigo-500 bg-clip-text">AT-Tweet</h2>
 <div className="bg-white shadow-md rounded-lg p-4 mb-4">
 <div className="flex items-center space-x-4">
-
 <Avatar>
       <AvatarImage src="https://github.com/shadcn.png" alt="@shadcn" />
       <AvatarFallback>CN</AvatarFallback>
     </Avatar>
-         
+
           <input
             type="text"
             placeholder="Author name"
@@ -229,6 +231,7 @@ NEXT_PUBLIC_APPWRITE_COLLECTIONS_ID=662b70382180ff1c3ff5 */
 
       <section className="py-12 bg-gray-100">
         <div className="container mx-auto">
+        <Navbar/>
         <h2 className="text-3xl font-bold text-center mb-8 text-transparent bg-gradient-to-r from-purple-400 to-indigo-900 bg-clip-text">Latest Blog Posts</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {books.map((book, index) => (

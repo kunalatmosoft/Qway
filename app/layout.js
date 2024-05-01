@@ -1,6 +1,7 @@
 //import { Inter } from "next/font/google";
 import "./globals.css";
 import { ThemeProvider } from "@/components/ui/theme-provider"
+import Navbar from "@/components/ui/Navbar"
 
 import { Toaster } from "@/components/ui/sonner"
 
@@ -21,6 +22,7 @@ export default function RootLayout({ children }) {
             enableSystem
             disableTransitionOnChange
           >
+            <Navbar/>
             {children}
           </ThemeProvider>        <Toaster />
 
