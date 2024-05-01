@@ -15,18 +15,18 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-       <body>
-          <ThemeProvider
-            attribute="class"
-            defaultTheme="system"
-            enableSystem
-            disableTransitionOnChange
-          >
-            <Navbar/>
-            {children}
-          </ThemeProvider>        <Toaster />
+      <body>
+        <ThemeProvider
+          attribute="class"
+          defaultTheme="system"
+          enableSystem
+          disableTransitionOnChange
+        >                     <Navbar />
+        {children}
 
-          </body>
+        </ThemeProvider>        <Toaster />
+
+      </body>
     </html>
   );/*className={inter.className}*/
 }
