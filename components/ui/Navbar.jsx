@@ -76,13 +76,16 @@ Login                    </div>
                   </a>
                 </NavigationMenuLink>
               </li>
-              <ListItem href="/main" title="Introduction">
+              <ListItem href="/main" title="Layout">
                 Re-usable components built using Radix UI and Tailwind CSS.
               </ListItem>
-              <ListItem href="/docs/installation" title="Installation">
+              <ListItem href="/mail" title="Blog">
                 How to install dependencies and structure your app.
               </ListItem>
-              <ListItem href="/docs/primitives/typography" title="Typography">
+              <ListItem href="/Atard" title="Atard">
+                Styles for headings, paragraphs, lists...etc
+              </ListItem>
+              <ListItem href="/Bot" title="Bot">
                 Styles for headings, paragraphs, lists...etc
               </ListItem>
             </ul>
