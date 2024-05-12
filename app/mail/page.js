@@ -44,6 +44,7 @@ import { Client, Databases, ID } from 'appwrite';
 import { Label } from "@/components/ui/label"
 import { Textarea } from "@/components/ui/textarea"
 import Navbar from "@/components/ui/Navbar"
+import { Input } from "@/components/ui/input"
 
 const BooksPage = () => {
   const [books, setBooks] = useState([]);
@@ -222,12 +223,12 @@ const BooksPage = () => {
               <AvatarImage src="https://github.com/shadcn.png" alt="@shadcn" />
               <AvatarFallback>CN</AvatarFallback>
             </Avatar>
-            <input
+            <Input
               type="text"
               placeholder="Author name"
               value={newTitle}
               onChange={(e) => setNewTitle(e.target.value)}
-              className="w-full bg-gray-100 rounded-lg p-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
+              
             />
           </div>
           <div className="flex items-center justify-between mt-4">
