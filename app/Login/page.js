@@ -68,12 +68,12 @@ const LoginPage = () => {
           <p>Logged in as {loggedInUser.name}</p>
           <Button className="w-half" type="button">
             <Link href="./mail" className="ml-auto inline-block text-sm underline">
-              Let's Get Started!
+              Let&apos;s Get Started!
             </Link>
           </Button>
           <Button className="w-half" type="button">
             <Link href="./main" className="ml-auto inline-block text-sm underline">
-              Let's Get Started!
+              Let&apos;s Get Started!
             </Link>
           </Button>
         </div>
@@ -124,7 +124,7 @@ const LoginPage = () => {
             </Button>
           </div>
           <div className="mt-4 text-center text-sm">
-            Don't have an account?{" "}
+            Don&apos;t have an account?{" "}
             <Link href="#" className="underline">
               Sign up
             </Link>

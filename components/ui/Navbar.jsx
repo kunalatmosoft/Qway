@@ -67,7 +67,8 @@ const Navbar = () => {
                     href="/Login"
                   >
                     <div className="mb-2 mt-4 text-lg font-medium">
-Login                    </div>
+                      Login
+                    </div>
                     <p className="text-sm leading-tight text-muted-foreground">
                       Beautifully designed components that you can copy and
                       paste into your apps. Accessible. Customizable. Open
@@ -120,7 +121,7 @@ Login                    </div>
 };
 
 const ListItem = React.forwardRef(
-  ({ className, title, children, ...props }, ref) => {
+  function ListItem({ className, title, children, ...props }, ref) {
     return (
       <li>
         <NavigationMenuLink asChild>
@@ -142,5 +143,9 @@ const ListItem = React.forwardRef(
     );
   }
 );
+
+ListItem.displayName = 'ListItem'; // Added displayName here
+
+Navbar.displayName = 'Navbar'; // Added displayName here
 
 export default Navbar;
